@@ -35,7 +35,7 @@ public final class InstrumentationModule {
 
     @Provides
     @Singleton
-    @ApiModule.NetworkInterceptors
+    @ApiNetworkModule.NetworkInterceptors
     static List<Interceptor> provideNetworkInterceptors(HttpLoggingInterceptor loggingInterceptor,
                                                         StethoInterceptor stethoInterceptor) {
         List<Interceptor> networkInterceptors = new ArrayList<>(2);
@@ -46,7 +46,7 @@ public final class InstrumentationModule {
 
     @Provides
     @Singleton
-    @ApiModule.AppInterceptors
+    @ApiNetworkModule.AppInterceptors
     static List<Interceptor> provideAppInterceptors() {
         return Collections.emptyList();
     }
